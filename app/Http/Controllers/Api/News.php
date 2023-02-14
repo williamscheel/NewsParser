@@ -23,6 +23,11 @@ class News extends Controller
                 'error' => 'Передан некорректный параметр `limit`'
             ], 400);
         }
+        if($request->sort != 'DESC' || $request->sort != 'ASC') {
+            return response()->json([
+                'error' => '`sort` может иметь два типа ASC или DESC'
+            ], 400);
+        }
         $newsList->orderBy('pubDate', $request->sort ?? 'DESC')
                     ->skip(($currentPage-1) * $limit)
                     ->take($limit);
