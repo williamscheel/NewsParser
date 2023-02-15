@@ -1,0 +1,5 @@
+
+## парсинг и сохранение новостей
+* * * * *	/opt/php73/bin/php /var/www/admin/data/www/news.parser/artisan command:getNews
+
+
